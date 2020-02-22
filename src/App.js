@@ -54,16 +54,18 @@ class App extends React.Component {
       window.scrollTo(0, 0);
       this.setLoader(true);
       if (!this.pdf) {
-        let doc = new jsPDF('p', 'mm', window.navigator.platform.toUpperCase().indexOf('MAC') >= 0 ? 'a2' : 'a3');
+        let doc = new jsPDF('p', 'px', 'a4');
+        const pageWidth = doc.internal.pageSize.getWidth();
+        const pageHeight = doc.internal.pageSize.getHeight();
         for (let i = 0; i < this.state.pages.length; i++) {
           window.scrollTo(0, 0);
           let page = ReactDOM.findDOMNode(this.state.pages[i].ref.current);
           await html2canvas(page).then(canvas => {
-            const imgData = canvas.toDataURL('image/png');
+            const imgData = canvas.toDataURL('image/jpeg');
             if (i > 0) {
               doc.addPage();
             }
-            doc.addImage(imgData, 'PNG', 0, 0);
+            doc.addImage(imgData, 'JPEG', 0, 0, pageWidth, pageHeight);
           });
         }
         this.pdf = doc;
