@@ -12,13 +12,9 @@ import LoadingComp from './components/loadingComp';
 const knownKeys = {
   'p': 80,
   'command': 91,
-  'escape': 27
+  'escape': 27,
+  'control': 17
 }
-
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
 
 class App extends React.Component {
   constructor(props) {
@@ -41,14 +37,15 @@ class App extends React.Component {
     });
   }
   _onKeyHandle = async (e, isDown) => {
-    this.keysList[e.keyCode] = knownKeys['escape'] === e.keyCode ? true : isDown
+    this.keysList[e.keyCode] = knownKeys['escape'] === e.keyCode ? true : isDown;
+    console.log(e.keyCode);
     if (this.keysList[knownKeys['escape']]) {
       Object.keys(this.keysList).forEach(key => {
         this.keysList[key] = false;
       });
       return;
     }
-    if (this.keysList[knownKeys['p']] && this.keysList[knownKeys['command']]) {
+    if (this.keysList[knownKeys['p']] && (this.keysList[knownKeys['command']] || this.keysList[knownKeys['control']])) {
       e.preventDefault();
       this.resetKeys([ 'p', 'command' ]);
       if (this.inGeneration) {
