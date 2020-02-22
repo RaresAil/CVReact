@@ -38,7 +38,6 @@ class App extends React.Component {
   }
   _onKeyHandle = async (e, isDown) => {
     this.keysList[e.keyCode] = knownKeys['escape'] === e.keyCode ? true : isDown;
-    console.log(e.keyCode);
     if (this.keysList[knownKeys['escape']]) {
       Object.keys(this.keysList).forEach(key => {
         this.keysList[key] = false;
@@ -55,7 +54,7 @@ class App extends React.Component {
       window.scrollTo(0, 0);
       this.setLoader(true);
       if (!this.pdf) {
-        let doc = new jsPDF('p', 'px', window.navigator.platform.toUpperCase().indexOf('MAC') >= 0 ? 'a2' : 'a4');
+        let doc = new jsPDF('p', 'mm', window.navigator.platform.toUpperCase().indexOf('MAC') >= 0 ? 'a2' : 'a3');
         for (let i = 0; i < this.state.pages.length; i++) {
           window.scrollTo(0, 0);
           let page = ReactDOM.findDOMNode(this.state.pages[i].ref.current);
