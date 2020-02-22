@@ -6,12 +6,14 @@ export class HeaderInfoLine extends Component {
     super(props);
     this.icon = React.createRef();
   }
+
   componentDidMount() {
     let icon = this.icon.current.getElementsByTagName("svg")[0];
     let iconRect = icon.viewBox.baseVal;
     icon.setAttribute("width", iconRect.width);
     icon.setAttribute("height", iconRect.height);
   }
+
   render() {
     return (
       <React.Fragment>

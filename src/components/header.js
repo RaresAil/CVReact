@@ -8,6 +8,7 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
     const contact = this.props.headerData.contact;
+
     this.info = [
       {
         icon: faPhoneAlt,
@@ -26,6 +27,7 @@ class Header extends React.Component {
         text: contact.location
       }
     ];
+    
   }
   render() {
     return (

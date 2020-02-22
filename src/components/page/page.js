@@ -18,16 +18,22 @@ const BodyLine = (props) => {
   if (props.id === 0) {
     oldLine = props.initType;
   }
+
   const line = props.line;
   let del = <Delimiter />;
+
   if (!props.hasHeader && props.id === 0) {
     del = "";
   }
+
   let prefix = <React.Fragment>{del}<div className="lineTitle" >{line.title}</div></React.Fragment>;
+
   if (oldLine === line.type) {
     prefix = "";
   }
+
   oldLine = line.type;
+
   switch(line.type) {
     case "about":
       return <React.Fragment>{prefix}<AboutLine id={props.id} data={line.data} /></React.Fragment>
@@ -42,6 +48,7 @@ const BodyLine = (props) => {
     default: 
       return <React.Fragment></React.Fragment>
   }
+
 };
 
 class Page extends React.Component {
@@ -49,10 +56,13 @@ class Page extends React.Component {
     super(props);
     const dataToLoad = props.dataToLoad;
     const body = dataToLoad.body;
+
     this.state = {
       bodyLoad: body || []
     }
+
   }
+
   componentDidMount() {
     if(!this.state.bodyLoad || this.state.bodyLoad.length <= 0) {
       return;
@@ -64,6 +74,7 @@ class Page extends React.Component {
       top: parseInt(paretnStyle.getPropertyValue("padding-top")),
       bottom: parseInt(paretnStyle.getPropertyValue("padding-bottom")),
     };
+
     const heightForContent = parent.clientHeight - (paddings.top + paddings.bottom);
     const childs = parent.childNodes;
 
@@ -82,6 +93,7 @@ class Page extends React.Component {
       const ch = parseInt(child.clientHeight);
       const childHeight = Number.isNaN(ch) ? 0 : ch;
       const childSytle = window.getComputedStyle(child);
+
       const margins = {
         top: parseInt(childSytle.getPropertyValue("margin-top")),
         bottom: parseInt(childSytle.getPropertyValue("margin-bottom"))
@@ -98,6 +110,7 @@ class Page extends React.Component {
         }
       } else {
         usedHeight += childHeight + marginsValue;
+
         if (!Number.isNaN(id)) {
           dataForThisPage.push(this.state.bodyLoad[id]);
         }
@@ -114,9 +127,11 @@ class Page extends React.Component {
     if (dataForNextPage.length > 0) {
       this.props.onNextPageSetup(dataForNextPage, lastType);
     }
+
     this.setState({
       bodyLoad: dataForThisPage
     });
+    
   }
   render() {
     return (

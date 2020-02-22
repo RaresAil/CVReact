@@ -1,9 +1,7 @@
 import React from 'react'
 
 class AboutLine extends React.Component {
-
   render() {
-
     return (
       <div id={this.props.id} className="aboutLine">
         <ul>

@@ -22,6 +22,7 @@ class App extends React.Component {
     this.keysList = { }
     this.pdf = null;
     this.inGeneration = false;
+
     this.state = {
       pages: [{
         ref: React.createRef(),
@@ -30,82 +31,108 @@ class App extends React.Component {
       }],
       isLoaderActive: true
     };
+    
   }
+
   resetKeys = (keys) => {
     keys.forEach(key => {
       this.keysList[knownKeys[key]] = false
     });
   }
+
   _onKeyHandle = async (e, isDown) => {
     this.keysList[e.keyCode] = knownKeys['escape'] === e.keyCode ? true : isDown;
+
     if (this.keysList[knownKeys['escape']]) {
       Object.keys(this.keysList).forEach(key => {
         this.keysList[key] = false;
       });
       return;
     }
+
     if (this.keysList[knownKeys['p']] && (this.keysList[knownKeys['command']] || this.keysList[knownKeys['control']])) {
       e.preventDefault();
       this.resetKeys([ 'p', 'command' ]);
+
       if (this.inGeneration) {
         return;
       }
+
       this.inGeneration = true;
       window.scrollTo(0, 0);
       this.setLoader(true);
+
       if (!this.pdf) {
         let doc = new jsPDF('p', 'px', 'a4');
         const pageWidth = doc.internal.pageSize.getWidth();
         const pageHeight = doc.internal.pageSize.getHeight();
+
         for (let i = 0; i < this.state.pages.length; i++) {
           window.scrollTo(0, 0);
           let page = ReactDOM.findDOMNode(this.state.pages[i].ref.current);
+
           await html2canvas(page).then(canvas => {
             const imgData = canvas.toDataURL('image/jpeg');
+
             if (i > 0) {
               doc.addPage();
             }
+
             doc.addImage(imgData, 'JPEG', 0, 0, pageWidth, pageHeight);
           });
+
         }
         this.pdf = doc;
         doc.save('cv.pdf');
+
       } else {
         this.pdf.save('cv.pdf');
       }
+
       this.setLoader(false);
       this.inGeneration = false;
     }
+
   }
+
   setLoader = (value) => {
     this.setState({
       isLoaderActive: value
     });
   }
+
   componentDidMount() {
     document.addEventListener("keydown", (e) => this._onKeyHandle(e, true));
     document.addEventListener("keyup", (e) => this._onKeyHandle(e, false));
+
     this.setState({
       isLoaderActive: false
     });
+
   }
+
   componentWillUnmount() {
     document.removeEventListener("keydown", (e) => this._onKeyHandle(e, true));
     document.removeEventListener("keyup", (e) => this._onKeyHandle(e, false));
   }
+
   onNextPageSetup = (dataForNextPage, lastType) => {
     const pages = this.state.pages;
     let dataToLoad = cvDataFile;
     dataToLoad.body = dataForNextPage;
+
     pages.push({
       ref: React.createRef(),
       dataToLoad: dataToLoad,
       lastType: lastType
     });
+
     this.setState({
       pages: pages
     });
+
   };
+
   render() {
     return (
       <div className="app">
