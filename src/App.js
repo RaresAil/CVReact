@@ -55,7 +55,7 @@ class App extends React.Component {
       window.scrollTo(0, 0);
       this.setLoader(true);
       if (!this.pdf) {
-        let doc = new jsPDF('p', 'px', 'a2');
+        let doc = new jsPDF('p', 'px', window.navigator.platform.toUpperCase().indexOf('MAC') >= 0 ? 'a2' : 'a4');
         for (let i = 0; i < this.state.pages.length; i++) {
           window.scrollTo(0, 0);
           let page = ReactDOM.findDOMNode(this.state.pages[i].ref.current);
