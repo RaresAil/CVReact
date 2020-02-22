@@ -1,0 +1,193 @@
+{
+  "name": "NICOLAE - RARES AILINCAI",
+  "surname": "",
+  "specialization": "FRONT-END & BACK-END DEVELOPER",
+  "contact": {
+    "phone": "+40 (754) 214 556",
+    "email": "ailincairares1@gmail.com",
+    "website": "www.raresdesigns.com",
+    "location": "Bld. Roman Musat, Bl. 40, Ap. 13, 611057, Roman (Romania)"
+  },
+  "body": [
+    {
+      "title": "ABOUT ME",
+      "type": "about",
+      "data": {
+        "sex": "male",
+        "birth": "3 Jul 2001",
+        "nat": "Romanian"
+      }
+    },
+    {
+      "title": "EXPERIENCE",
+      "type": "experience",
+      "data": {
+        "start_year": "2018",
+        "end_year": "2019",
+        "title": "Full Stack Developer",
+        "institute": "Freelancer",
+        "location": "Roman, Romania",
+        "info": [
+          "PHP & Laravel",
+          "HTML5 / CSS3 / SASS",
+          "NodeJS / React / Express",
+          ".NET",
+          "Swift"
+        ]
+      }
+    },
+    {
+      "title": "EXPERIENCE",
+      "type": "experience",
+      "data": {
+        "start_year": "2019",
+        "end_year": "2019",
+        "title": "PentaStagiu Swift",
+        "institute": "Pentalog",
+        "location": "Iasi, Romania",
+        "info": [
+          "Working in XCode",
+          "Using the Swift Programing Language",
+          "Building iOS Applications"
+        ]
+      }
+    },
+    {
+      "title": "EDUCATION",
+      "type": "education",
+      "data": {
+        "start_year": "2018",
+        "end_year": "2019",
+        "title": "CLA: Programming Essentials in C",
+        "institute": "Liceul Tehnologic Vasile Sav",
+        "location": "Roman, Romania",
+        "info": [
+          "The universal concepts of computer programming and developer tools.",
+          "The syntax and semantics of the C language as well as data types offered by the language.",
+          "Writing programs using standard language infrastructure regardless of the hardware or software platform.",
+          "The fundamental programming techniques, customs and vocabulary, including the most common library functions and the usage of the preprocessors."
+        ]
+      }
+    },
+    {
+      "title": "EDUCATION",
+      "type": "education",
+      "data": {
+        "start_year": "2018",
+        "end_year": "2019",
+        "title": "IT Essentials",
+        "institute": "Liceul Tehnologic Vasile Sav",
+        "location": "Roman, Romania",
+        "info": [
+          "Define information technology (IT) and describe the components of a personal computer.",
+          "Describe how to protect people, equipment, and environments from accidents, damage, and contamination.",
+          "Perform a step-by-step assembly of a desktop computer.",
+          "Apply good communication skills and professional behavior while working with customers.",
+          "Assess customer needs, analyze possible configurations, and provide solutions or recommendations for hardware, operating systems, networking, and security."
+        ]
+      }
+    },
+    {
+      "title": "EDUCATION",
+      "type": "education",
+      "data": {
+        "start_year": "2019",
+        "end_year": "2020",
+        "title": "NDG Linux Essentials",
+        "institute": "Liceul Tehnologic Vasile Sav",
+        "location": "Roman, Romania",
+        "info": [
+          "Understand the Linux operating system.",
+          "Have demonstrated the ability to navigate a Linux system.",
+          "Can execute the power of the Linux command line.",
+          "Possess knowledge of Linux security and file permissions"
+        ]
+      }
+    },
+    {
+      "title": "EDUCATION",
+      "type": "education",
+      "data": {
+        "start_year": "2018",
+        "end_year": "2019",
+        "title": "Cybersecurity Essentials",
+        "institute": "Liceul Tehnologic Vasile Sav",
+        "location": "Roman, Romania",
+        "info": [
+          "Describe the tactics, techniques and procedures used by cyber criminals.",
+          "Describe the principles of confidentiality, integrity, and availability as they relate to data states and cybersecurity countermeasures.",
+          "Describe technologies, products and procedures used to protect confidentiality, ensure integrity and provide high availability.",
+          "Explain how cybersecurity professionals use technologies, processes and procedures to defend all components of the network."
+        ]
+      }
+    },
+    {
+      "title": "EDUCATION",
+      "type": "education",
+      "data": {
+        "start_year": "2016",
+        "end_year": "2020",
+        "title": "Computer Technology Technician",
+        "institute": "Liceul Tehnologic Vasile Sav",
+        "location": "Roman, Romania",
+        "info": [
+          "Setting up hardware and installing and configure software and drivers.",
+          "Maintaining and repairing technological equipment (e.g. routers) or peripheral devices.",
+          "Installing well-functioning LAN/WAN and other networks and manage components (servers, IPs etc.).",
+          "Manage security options and software in computers and networks to maintain privacy and protection from attacks.",
+          "Troubleshoot system failures or bugs and provide solutions to restore functionality."
+        ]
+      }
+    },
+    {
+      "title": "EXPERTISE",
+      "type": "expertise",
+      "data": [
+        {
+          "title": "PHP & MySQL",
+          "percent": 60
+        },
+        {
+          "title": "HTML5 / CSS3 / SASS",
+          "percent": 80
+        },
+        {
+          "title": "UX / UI",
+          "percent": 85
+        },
+        {
+          "title": "Visual Studio Code",
+          "percent": 60
+        },
+        {
+          "title": "Discord Bots",
+          "percent": 70
+        },
+        {
+          "title": "Social Skills",
+          "percent": 95
+        },
+        {
+          "title": "Swift 5",
+          "percent": 30
+        },
+        {
+          "title": "NodeJS",
+          "percent": 60
+        },
+        {
+          "title": "Microsoft Office 2019",
+          "percent": 90
+        },
+        {
+          "title": "React",
+          "percent": 65
+        },
+        {
+          "title": "Express",
+          "percent": 65
+        }
+      ]
+    }
+  ]
+}

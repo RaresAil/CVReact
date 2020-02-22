@@ -1,0 +1,66 @@
+@import '../theme/theme'
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,600,700&display=swap');
+
+body
+  background: white
+  margin: 0
+  font-family: 'Raleway', sans-serif
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  margin: 0
+code
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace
+
+.app
+  padding: 60px 0
+  box-sizing: border-box
+  flex-direction: column
+  width: 100%
+  position: relative
+  overflow: scroll
+
+.row
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+.column
+  display: flex
+  flex-direction: column
+.icon
+  font-size: inherit
+
+.loadingPage
+  position: fixed
+  width: 100%
+  height: 100%
+  background: $LoaderBackground
+  top: 0
+  transition: 300ms
+  opacity: 0
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  &.active
+    opacity: 1
+  .spinner
+    box-sizing: border-box
+    display: inline-block
+    width: 35px
+    height: 35px
+    vertical-align: text-bottom
+    border: 0.29em solid $LoaderSpinner
+    border-right: 0.29em solid transparent
+    border-radius: 50%
+    -webkit-animation: spinner-border .75s linear infinite
+    animation: spinner-border .75s linear infinite
+
+@-webkit-keyframes spinner-border
+  to
+    -webkit-transform: rotate(1turn)
+    transform: rotate(1turn)
+
+@keyframes spinner-border
+  to
+    -webkit-transform: rotate(1turn)
+    transform: rotate(1turn)

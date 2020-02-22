@@ -1,0 +1,156 @@
+@import '../../../theme/theme'
+
+=shadow($prop)
+  -webkit-box-shadow: $prop
+  -moz-box-shadow: $prop
+  box-shadow: $prop
+
+.page
+  background: white
+  width: $A4Width
+  height: $A4Height
+  grid-area: page
+  +shadow(0px 0px 72px -8px rgba(0,0,0,0.22))
+  box-sizing: border-box
+  margin: 20px auto
+  padding: 36px 42px
+  color: $TextColor
+  overflow: hidden
+.header
+  h1
+    font-size: 37px
+    max-width: 322px
+    margin: 0
+    font-weight: 700
+  h2
+    font-size: 13px
+    font-weight: 500
+    margin: 11px 0 0 0
+  ul
+    margin: 0
+    padding: 0
+    list-style: none
+    box-sizing: border-box
+    li
+      max-width: 158px
+      padding: 3px
+      box-sizing: border-box
+      font-size: 11px
+      .icon
+        margin-right: 10px
+        user-select: none
+.delimiterLine
+  height: 2px
+  width: 100%
+  box-sizing: border-box
+  margin: 30px 0
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  position: relative
+  user-select: none
+  &::before
+    content: ''
+    position: absolute
+    width: 34px
+    height: 2px
+    background: $DelColor
+    left: 0
+    border-radius: 2px
+  span
+    background: $DelBackground
+    width: 100%
+    height: 1px
+    display: block
+.lineTitle
+  color: $TextColor
+  font-size: 16px
+  font-weight: bold
+  letter-spacing: 4px
+.aboutLine
+  margin-top: 25px
+  margin-bottom: 10px
+  ul
+    list-style: none
+    padding: 0
+    margin: 0
+    li
+      color: $TextColor
+      font-size: 11px
+      margin-bottom: 5px
+      &:last-child
+        margin-bottom: 0
+      span
+        font-weight: 600
+.experienceLine
+  margin-top: 25px
+  display: grid
+  position: relative
+  grid-template-columns: 110px auto
+  .ex-years
+    font-size: 13px
+    color: $TextExYearColor
+    span
+      font-weight: 600
+      &:first-child::after
+        content: ' - '
+  .ex-title
+    font-size: 12px
+    font-weight: 600
+    color: $TextExTitleColor
+    letter-spacing: 1px
+  .ex-ins
+    font-size: 11px
+    margin-top: 2px
+    font-weight: 600
+    span
+      &:first-child
+        color: $TextExInsColor
+        &::after
+          content: ' - '
+      &:last-child
+        color: $TextExLocColor
+  .ex-info
+    list-style: none
+    padding: 0
+    margin: 8px 0 0 0
+    font-size: 11px
+    color: $TextExInfoColor
+    li
+      margin-bottom: 3px
+      &:last-child
+        margin-bottom: 0
+      &::before
+        content: '- '
+.expertiseLine
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+  position: relative
+  box-sizing: border-box
+  column-gap: 62px
+  row-gap: 3px
+  margin-top: 30px
+  font-size: 11px
+  font-weight: 600
+  .item
+    display: grid
+    grid-template-columns: auto 180px
+    position: relative
+    align-items: center
+    .slider
+      position: relative
+      width: 100%
+      height: 4px
+      background: $SliderBackground
+      border-radius: 4px
+      overflow: hidden
+      span
+        position: absolute
+        left: 0
+        top: 0
+        bottom: 0
+        height: 100%
+        width: 0
+        background: $SliderHandle
+        border-radius: 4px
