@@ -1,6 +1,14 @@
 @import '../theme/theme'
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,500,600,700&display=swap');
 
+a
+  text-decoration: none
+  color: $LinkColor
+  font-weight: 600
+  transition: 500ms
+  &:hover
+    color: $LinkColorHover
+
 body
   background: white
   margin: 0
@@ -41,8 +49,10 @@ code
   justify-content: center
   align-items: center
   flex-direction: column
+  pointer-events: none
   &.active
     opacity: 1
+    pointer-events: auto
   .spinner
     box-sizing: border-box
     display: inline-block

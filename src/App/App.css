@@ -1,4 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,500,600,700&display=swap");
+a {
+  text-decoration: none;
+  color: #0B0B0B;
+  font-weight: 600;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+a:hover {
+  color: #ACACAC;
+}
+
 body {
   background: white;
   margin: 0;
@@ -74,10 +86,12 @@ code {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  pointer-events: none;
 }
 
 .loadingPage.active {
   opacity: 1;
+  pointer-events: auto;
 }
 
 .loadingPage .spinner {

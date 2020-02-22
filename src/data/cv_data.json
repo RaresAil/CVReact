@@ -19,6 +19,20 @@
       }
     },
     {
+      "title": "PROJECTS",
+      "type": "projects",
+      "data": {
+        "start_year": "2020",
+        "end_year": "2020",
+        "title": "NodeJS React | Front-End",
+        "institute": "GitHub",
+        "location": "Roman, Romania",
+        "info": [
+          "CV Generator from JSON file. -> <a>https://github.com/RaresAil/CVReact</a>"
+        ]
+      }
+    },
+    {
       "title": "EXPERIENCE",
       "type": "experience",
       "data": {

@@ -35,6 +35,8 @@ const BodyLine = (props) => {
       return <React.Fragment>{prefix}<ExperienceLine id={props.id} data={line.data} /></React.Fragment>
     case "education":
       return <React.Fragment>{prefix}<ExperienceLine id={props.id} data={line.data} /></React.Fragment>
+    case "projects":
+      return <React.Fragment>{prefix}<ExperienceLine id={props.id} data={line.data} /></React.Fragment>
     case "expertise":
       return <React.Fragment>{prefix}<ExpertiseLine id={props.id} data={line.data} /></React.Fragment>
     default: 

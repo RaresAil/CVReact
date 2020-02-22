@@ -17,7 +17,20 @@ class ExperienceLine extends Component {
           </div>
           <ul className="ex-info">
             {data.info.map((infoLine, i) => {
-              return <li key={i}>{infoLine}</li>
+              let link = infoLine.substring(
+                infoLine.lastIndexOf("<a>") + 1, 
+                infoLine.lastIndexOf("</a>")
+              ).replace('a>', "");
+              let line = infoLine;
+              let n = "";
+              let linkA = <React.Fragment></React.Fragment>;
+              if (link !== "") {
+                line = line.split(`<a>${link}</a>`);
+                n = line[1];
+                line = line[0];
+                linkA = <a href={link} target="_blank" rel="noopener noreferrer">{link}</a>;
+              }
+              return <li key={i}>{line}{linkA}{n}</li>
             })}
           </ul>
         </div>
