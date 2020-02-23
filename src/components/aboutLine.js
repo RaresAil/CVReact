@@ -1,7 +1,8 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 class AboutLine extends React.Component {
-  render() {
+  render () {
     return (
       <div id={this.props.id} className="aboutLine">
         <ul>
@@ -10,8 +11,12 @@ class AboutLine extends React.Component {
           <li><span>Nationality:</span> Romanian</li>
         </ul>
       </div>
-    )
+    );
   }
 }
+
+AboutLine.propTypes = {
+  id: PropTypes.number
+};
 
 export default AboutLine;

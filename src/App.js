@@ -1,6 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import jsPDF from 'jspdf';
+import JsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 
 import './App/App.css';
@@ -10,16 +9,16 @@ import Page from './components/page/page';
 import LoadingComp from './components/loadingComp';
 
 const knownKeys = {
-  'p': 80,
-  'command': 91,
-  'escape': 27,
-  'control': 17
-}
+  p: 80,
+  command: 91,
+  escape: 27,
+  control: 17
+};
 
 class App extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
-    this.keysList = { }
+    this.keysList = { };
     this.pdf = null;
     this.inGeneration = false;
 
@@ -27,32 +26,33 @@ class App extends React.Component {
       pages: [{
         ref: React.createRef(),
         dataToLoad: cvDataFile,
-        lastType: ""
+        lastType: ''
       }],
       isLoaderActive: true
     };
-    
   }
 
   resetKeys = (keys) => {
     keys.forEach(key => {
-      this.keysList[knownKeys[key]] = false
+      this.keysList[knownKeys[key]] = false;
     });
   }
 
   _onKeyHandle = async (e, isDown) => {
-    this.keysList[e.keyCode] = knownKeys['escape'] === e.keyCode ? true : isDown;
+    this.keysList[e.keyCode] = knownKeys.escape === e.keyCode ? true : isDown;
 
-    if (this.keysList[knownKeys['escape']]) {
+    if (this.keysList[knownKeys.escape]) {
       Object.keys(this.keysList).forEach(key => {
         this.keysList[key] = false;
       });
       return;
     }
 
-    if (this.keysList[knownKeys['p']] && (this.keysList[knownKeys['command']] || this.keysList[knownKeys['control']])) {
+    if (this.keysList[knownKeys.p] && (this.keysList[knownKeys.command] || this.keysList[knownKeys.control])) {
       e.preventDefault();
-      this.resetKeys([ 'p', 'command' ]);
+      this.resetKeys([
+        'p', 'command'
+      ]);
 
       if (this.inGeneration) {
         return;
@@ -63,13 +63,13 @@ class App extends React.Component {
       this.setLoader(true);
 
       if (!this.pdf) {
-        let doc = new jsPDF('p', 'px', 'a4');
+        const doc = new JsPDF('p', 'px', 'a4');
         const pageWidth = doc.internal.pageSize.getWidth();
         const pageHeight = doc.internal.pageSize.getHeight();
 
         for (let i = 0; i < this.state.pages.length; i++) {
           window.scrollTo(0, 0);
-          let page = ReactDOM.findDOMNode(this.state.pages[i].ref.current);
+          const page = this.state.pages[i].ref.current;
 
           await html2canvas(page).then(canvas => {
             const imgData = canvas.toDataURL('image/jpeg');
@@ -80,11 +80,10 @@ class App extends React.Component {
 
             doc.addImage(imgData, 'JPEG', 0, 0, pageWidth, pageHeight);
           });
-
         }
+
         this.pdf = doc;
         doc.save('cv.pdf');
-
       } else {
         this.pdf.save('cv.pdf');
       }
@@ -92,7 +91,6 @@ class App extends React.Component {
       this.setLoader(false);
       this.inGeneration = false;
     }
-
   }
 
   setLoader = (value) => {
@@ -101,24 +99,21 @@ class App extends React.Component {
     });
   }
 
-  componentDidMount() {
-    document.addEventListener("keydown", (e) => this._onKeyHandle(e, true));
-    document.addEventListener("keyup", (e) => this._onKeyHandle(e, false));
+  componentDidMount () {
+    document.addEventListener('keydown', (e) => this._onKeyHandle(e, true));
+    document.addEventListener('keyup', (e) => this._onKeyHandle(e, false));
 
-    this.setState({
-      isLoaderActive: false
-    });
-
+    this.setLoader(false);
   }
 
-  componentWillUnmount() {
-    document.removeEventListener("keydown", (e) => this._onKeyHandle(e, true));
-    document.removeEventListener("keyup", (e) => this._onKeyHandle(e, false));
+  componentWillUnmount () {
+    document.removeEventListener('keydown', (e) => this._onKeyHandle(e, true));
+    document.removeEventListener('keyup', (e) => this._onKeyHandle(e, false));
   }
 
   onNextPageSetup = (dataForNextPage, lastType) => {
     const pages = this.state.pages;
-    let dataToLoad = cvDataFile;
+    const dataToLoad = cvDataFile;
     dataToLoad.body = dataForNextPage;
 
     pages.push({
@@ -130,19 +125,18 @@ class App extends React.Component {
     this.setState({
       pages: pages
     });
-
   };
 
-  render() {
+  render () {
     return (
       <div className="app">
         {this.state.pages.map((data, i) => {
-          return <Page 
-            key={i} 
-            id={i} 
-            ref={data.ref} 
-            onNextPageSetup={this.onNextPageSetup} 
-            hasHeader={i === 0} 
+          return <Page
+            key={i}
+            id={i}
+            componentRef={this.state.pages[i].ref}
+            onNextPageSetup={this.onNextPageSetup}
+            hasHeader={i === 0}
             dataToLoad={data.dataToLoad}
             lastType={data.lastType} />;
         })}

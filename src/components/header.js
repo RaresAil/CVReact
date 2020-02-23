@@ -1,14 +1,18 @@
-import React from "react";
+import React from 'react';
 import PropTypes from 'prop-types';
 import { faPhoneAlt, faLocationArrow, faAt, faGlobeEurope } from '@fortawesome/free-solid-svg-icons';
 
-import HeaderInfoLine from './headerInfoLine'
+import HeaderInfoLine from './headerInfoLine';
 
 class Header extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
-    const contact = this.props.headerData.contact;
 
+    if (!props.headerData) {
+      return;
+    }
+
+    const contact = props.headerData.contact;
     this.info = [
       {
         icon: faPhoneAlt,
@@ -27,9 +31,12 @@ class Header extends React.Component {
         text: contact.location
       }
     ];
-    
   }
-  render() {
+
+  render () {
+    if (!this.props.headerData) {
+      return <React.Fragment></React.Fragment>;
+    }
     return (
       <div className="header">
         <div className="row">
@@ -48,7 +55,7 @@ class Header extends React.Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 

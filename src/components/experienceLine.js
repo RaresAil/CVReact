@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class ExperienceLine extends Component {
-  render() {
+  render () {
     const data = this.props.data;
 
     return (
@@ -18,17 +19,16 @@ class ExperienceLine extends Component {
           </div>
           <ul className="ex-info">
             {data.info.map((infoLine, i) => {
-
-              let link = infoLine.substring(
-                infoLine.lastIndexOf("<a>") + 1, 
-                infoLine.lastIndexOf("</a>")
-              ).replace('a>', "");
+              const link = infoLine.substring(
+                infoLine.lastIndexOf('<a>') + 1,
+                infoLine.lastIndexOf('</a>')
+              ).replace('a>', '');
 
               let line = infoLine;
-              let n = "";
+              let n = '';
               let linkA = <React.Fragment></React.Fragment>;
 
-              if (link !== "") {
+              if (link !== '') {
                 line = line.split(`<a>${link}</a>`);
                 n = line[1];
                 line = line[0];
@@ -40,8 +40,13 @@ class ExperienceLine extends Component {
           </ul>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default ExperienceLine
+ExperienceLine.propTypes = {
+  data: PropTypes.object,
+  id: PropTypes.number
+};
+
+export default ExperienceLine;

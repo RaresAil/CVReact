@@ -1,13 +1,13 @@
-import React from 'react'
+import React from 'react';
 
 class Delimiter extends React.Component {
-  render() {
+  render () {
     return (
       <div className="delimiterLine">
         <span></span>
       </div>
-    )
+    );
   }
 }
 
-export default Delimiter
+export default Delimiter;
