@@ -21,6 +21,7 @@ class App extends React.Component {
     this.keysList = { };
     this.pdf = null;
     this.inGeneration = false;
+    this.appRef = React.createRef();
 
     this.state = {
       pages: [{
@@ -59,6 +60,7 @@ class App extends React.Component {
       }
 
       this.inGeneration = true;
+      const appElement = this.appRef.current;
       window.scrollTo(0, 0);
       this.setLoader(true);
 
@@ -67,11 +69,17 @@ class App extends React.Component {
         const pageWidth = doc.internal.pageSize.getWidth();
         const pageHeight = doc.internal.pageSize.getHeight();
 
+        appElement.classList.add('print-mode');
+
         for (let i = 0; i < this.state.pages.length; i++) {
           window.scrollTo(0, 0);
           const page = this.state.pages[i].ref.current;
 
-          await html2canvas(page).then(canvas => {
+          await html2canvas(page, {
+            useCORS: true,
+            allowTaint: false,
+            logging: false
+          }).then(canvas => {
             const imgData = canvas.toDataURL('image/jpeg');
 
             if (i > 0) {
@@ -81,6 +89,8 @@ class App extends React.Component {
             doc.addImage(imgData, 'JPEG', 0, 0, pageWidth, pageHeight);
           });
         }
+
+        appElement.classList.remove('print-mode');
 
         this.pdf = doc;
         doc.save('cv.pdf');
@@ -129,7 +139,7 @@ class App extends React.Component {
 
   render () {
     return (
-      <div className="app">
+      <div className="app" ref={this.appRef}>
         {this.state.pages.map((data, i) => {
           return <Page
             key={i}
