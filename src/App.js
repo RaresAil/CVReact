@@ -80,7 +80,7 @@ class App extends React.Component {
             allowTaint: false,
             logging: false
           }).then(canvas => {
-            const imgData = canvas.toDataURL('image/jpeg');
+            const imgData = canvas.toDataURL('image/jpeg', 1);
 
             if (i > 0) {
               doc.addPage();
