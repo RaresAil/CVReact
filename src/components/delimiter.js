@@ -4,7 +4,8 @@ class Delimiter extends React.Component {
   render () {
     return (
       <div className="delimiterLine">
-        <span></span>
+        <span className="delLineleft"></span>
+        <span className="delLineSpan"></span>
       </div>
     );
   }

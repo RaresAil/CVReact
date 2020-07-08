@@ -33,6 +33,48 @@
       }
     },
     {
+      "title": "PROJECTS",
+      "type": "projects",
+      "data": {
+        "start_year": "2020",
+        "end_year": "2020",
+        "title": "NodeJS React Native (Mobile Application)",
+        "institute": "GitHub",
+        "location": "Roman, Romania",
+        "info": [
+          "React Native Demo Application -> <a>https://github.com/RaresAil/ReactNativeDemoApp</a>"
+        ]
+      }
+    },
+    {
+      "title": "PROJECTS",
+      "type": "projects",
+      "data": {
+        "start_year": "2020",
+        "end_year": "2020",
+        "title": ".NET Core A* Algorithm",
+        "institute": "GitHub",
+        "location": "Roman, Romania",
+        "info": [
+          "A* Algorithm -> <a>https://github.com/RaresAil/RaresAStar</a>"
+        ]
+      }
+    },
+    {
+      "title": "PROJECTS",
+      "type": "projects",
+      "data": {
+        "start_year": "2020",
+        "end_year": "2020",
+        "title": "Support Wheel of Fate made in ReactJS and Express (NodeJS)",
+        "institute": "GitHub",
+        "location": "Roman, Romania",
+        "info": [
+          "Project -> <a>https://github.com/RaresAil/support-wheel-of-fate</a>"
+        ]
+      }
+    },
+    {
       "title": "EXPERIENCE",
       "type": "experience",
       "data": {
@@ -163,7 +205,7 @@
         },
         {
           "title": "HTML5 / CSS3 / SASS",
-          "percent": 80
+          "percent": 90
         },
         {
           "title": "UX / UI",
@@ -171,11 +213,11 @@
         },
         {
           "title": "Visual Studio Code",
-          "percent": 60
+          "percent": 90
         },
         {
           "title": "Discord Bots",
-          "percent": 70
+          "percent": 80
         },
         {
           "title": "Social Skills",
@@ -187,7 +229,7 @@
         },
         {
           "title": "NodeJS",
-          "percent": 60
+          "percent": 85
         },
         {
           "title": "Microsoft Office 2019",
@@ -195,11 +237,15 @@
         },
         {
           "title": "React",
-          "percent": 65
+          "percent": 90
+        },
+        {
+          "title": "React Native",
+          "percent": 80
         },
         {
           "title": "Express",
-          "percent": 65
+          "percent": 90
         }
       ]
     }
