@@ -24,6 +24,34 @@
       "data": {
         "start_year": "2020",
         "end_year": "2020",
+        "title": "NodeJS Library in TypeScript for ExpressJS",
+        "institute": "NPM",
+        "location": "Roman, Romania",
+        "info": [
+          "I made a NodeJS Library in TypeScript for ExpressJS, a Dependency Injector and a CLI. The library is made to can build ExpressJS applications with TypeScript using the ADR Pattern (Action-Domain-Responder) and i added Decorators to Inject actions (Routes) automatically. -> <a>https://www.npmjs.com/package/express-adr-dependency-injection-typescript</a>"
+        ]
+      }
+    },
+    {
+      "title": "PROJECTS",
+      "type": "projects",
+      "data": {
+        "start_year": "2020",
+        "end_year": "2020",
+        "title": "NodeJS React with Redux | Front-End",
+        "institute": "GitHub",
+        "location": "Roman, Romania",
+        "info": [
+          "I made a Web Application using React and Redux using the MVC Pattern -> <a>https://github.com/RaresAil/redux-typescript-demo</a>"
+        ]
+      }
+    },
+    {
+      "title": "PROJECTS",
+      "type": "projects",
+      "data": {
+        "start_year": "2020",
+        "end_year": "2020",
         "title": "NodeJS React | Front-End",
         "institute": "GitHub",
         "location": "Roman, Romania",
@@ -117,12 +145,7 @@
         "title": "CLA: Programming Essentials in C",
         "institute": "Liceul Tehnologic Vasile Sav",
         "location": "Roman, Romania",
-        "info": [
-          "The universal concepts of computer programming and developer tools.",
-          "The syntax and semantics of the C language as well as data types offered by the language.",
-          "Writing programs using standard language infrastructure regardless of the hardware or software platform.",
-          "The fundamental programming techniques, customs and vocabulary, including the most common library functions and the usage of the preprocessors."
-        ]
+        "info": []
       }
     },
     {
@@ -134,13 +157,7 @@
         "title": "IT Essentials",
         "institute": "Liceul Tehnologic Vasile Sav",
         "location": "Roman, Romania",
-        "info": [
-          "Define information technology (IT) and describe the components of a personal computer.",
-          "Describe how to protect people, equipment, and environments from accidents, damage, and contamination.",
-          "Perform a step-by-step assembly of a desktop computer.",
-          "Apply good communication skills and professional behavior while working with customers.",
-          "Assess customer needs, analyze possible configurations, and provide solutions or recommendations for hardware, operating systems, networking, and security."
-        ]
+        "info": []
       }
     },
     {
@@ -152,12 +169,7 @@
         "title": "NDG Linux Essentials",
         "institute": "Liceul Tehnologic Vasile Sav",
         "location": "Roman, Romania",
-        "info": [
-          "Understand the Linux operating system.",
-          "Have demonstrated the ability to navigate a Linux system.",
-          "Can execute the power of the Linux command line.",
-          "Possess knowledge of Linux security and file permissions"
-        ]
+        "info": []
       }
     },
     {
@@ -169,12 +181,7 @@
         "title": "Cybersecurity Essentials",
         "institute": "Liceul Tehnologic Vasile Sav",
         "location": "Roman, Romania",
-        "info": [
-          "Describe the tactics, techniques and procedures used by cyber criminals.",
-          "Describe the principles of confidentiality, integrity, and availability as they relate to data states and cybersecurity countermeasures.",
-          "Describe technologies, products and procedures used to protect confidentiality, ensure integrity and provide high availability.",
-          "Explain how cybersecurity professionals use technologies, processes and procedures to defend all components of the network."
-        ]
+        "info": []
       }
     },
     {
@@ -186,13 +193,7 @@
         "title": "Computer Technology Technician",
         "institute": "Liceul Tehnologic Vasile Sav",
         "location": "Roman, Romania",
-        "info": [
-          "Setting up hardware and installing and configure software and drivers.",
-          "Maintaining and repairing technological equipment (e.g. routers) or peripheral devices.",
-          "Installing well-functioning LAN/WAN and other networks and manage components (servers, IPs etc.).",
-          "Manage security options and software in computers and networks to maintain privacy and protection from attacks.",
-          "Troubleshoot system failures or bugs and provide solutions to restore functionality."
-        ]
+        "info": []
       }
     },
     {
