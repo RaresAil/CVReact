@@ -3,10 +3,10 @@
   "surname": "",
   "specialization": "FRONT-END & BACK-END DEVELOPER",
   "contact": {
-    "phone": "+40 (754) 214 556",
-    "email": "ailincairares1@gmail.com",
+    "phone": "phone",
+    "email": "email",
     "website": "www.raresdesigns.com",
-    "location": "Bld. Roman Musat, Bl. 40, Ap. 13, 611057, Roman (Romania)"
+    "location": "location"
   },
   "body": [
     {
@@ -14,7 +14,7 @@
       "type": "about",
       "data": {
         "sex": "male",
-        "birth": "3 Jul 2001",
+        "birth": "age",
         "nat": "Romanian"
       }
     },
