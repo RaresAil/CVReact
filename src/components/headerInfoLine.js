@@ -1,21 +1,21 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class HeaderInfoLine extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
     this.icon = React.createRef();
   }
 
-  componentDidMount () {
+  componentDidMount() {
     const icon = this.icon.current.getElementsByTagName('svg')[0];
     const iconRect = icon.viewBox.baseVal;
     icon.setAttribute('width', iconRect.width);
     icon.setAttribute('height', iconRect.height);
   }
 
-  render () {
+  render() {
     return (
       <React.Fragment>
         <li ref={this.icon} className="row" style={{ justifyContent: 'left' }}>

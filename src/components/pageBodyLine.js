@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 
 import Delimiter from './delimiter';
 import AboutLine from './aboutLine';
-import ExperienceLine from './experienceLine';
 import ExpertiseLine from './expertiseLine';
+import ExperienceLine from './experienceLine';
 
 let oldType = '';
 
 class PageBodyLine extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
 
     if (props.id === 0) {
@@ -23,7 +23,12 @@ class PageBodyLine extends Component {
       del = '';
     }
 
-    this.prefix = <React.Fragment>{del}<div className="lineTitle" >{this.line.title}</div></React.Fragment>;
+    this.prefix = (
+      <React.Fragment>
+        {del}
+        <div className="lineTitle">{this.line.title}</div>
+      </React.Fragment>
+    );
 
     if (oldType === this.line.type) {
       this.prefix = '';
@@ -32,21 +37,46 @@ class PageBodyLine extends Component {
     oldType = this.line.type;
   }
 
-  render () {
+  render() {
     switch (this.line.type) {
       case 'about':
-        return <React.Fragment>{this.prefix}<AboutLine id={this.props.id} data={this.line.data} /></React.Fragment>;
+        return (
+          <React.Fragment>
+            {this.prefix}
+            <AboutLine id={this.props.id} data={this.line.data} />
+          </React.Fragment>
+        );
       case 'experience':
-        return <React.Fragment>{this.prefix}<ExperienceLine id={this.props.id} data={this.line.data} /></React.Fragment>;
+        return (
+          <React.Fragment>
+            {this.prefix}
+            <ExperienceLine id={this.props.id} data={this.line.data} />
+          </React.Fragment>
+        );
       case 'education':
-        return <React.Fragment>{this.prefix}<ExperienceLine id={this.props.id} data={this.line.data} /></React.Fragment>;
+        return (
+          <React.Fragment>
+            {this.prefix}
+            <ExperienceLine id={this.props.id} data={this.line.data} />
+          </React.Fragment>
+        );
       case 'expertise':
-        return <React.Fragment>{this.prefix}<ExpertiseLine id={this.props.id} data={this.line.data} /></React.Fragment>;
+        return (
+          <React.Fragment>
+            {this.prefix}
+            <ExpertiseLine id={this.props.id} data={this.line.data} />
+          </React.Fragment>
+        );
       case 'projects':
-        return <React.Fragment>{this.prefix}<ExperienceLine id={this.props.id} data={this.line.data} /></React.Fragment>;
+        return (
+          <React.Fragment>
+            {this.prefix}
+            <ExperienceLine id={this.props.id} data={this.line.data} />
+          </React.Fragment>
+        );
       default:
         return <React.Fragment></React.Fragment>;
-    };
+    }
   }
 }
 

@@ -1,11 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { faPhoneAlt, faLocationArrow, faAt, faGlobeEurope } from '@fortawesome/free-solid-svg-icons';
+import {
+  faAt,
+  faPhoneAlt,
+  faGlobeEurope,
+  faLocationArrow
+} from '@fortawesome/free-solid-svg-icons';
 
 import HeaderInfoLine from './headerInfoLine';
 
 class Header extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
 
     if (!props.headerData) {
@@ -33,7 +38,7 @@ class Header extends React.Component {
     ];
   }
 
-  render () {
+  render() {
     if (!this.props.headerData) {
       return <React.Fragment></React.Fragment>;
     }

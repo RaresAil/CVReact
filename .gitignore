@@ -1,5 +1,5 @@
 node_modules
 build
-.env
 .vscode
 **/.DS_Store
+cv_private.json

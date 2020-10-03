@@ -3,10 +3,12 @@ import JsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 
 import './App/App.css';
-import cvDataFile from './data/cv_data.json';
-import Page from './components/page/page';
+import getCVData from './data/cvData';
 
+import Page from './components/page/page';
 import LoadingComp from './components/loadingComp';
+
+const cvDataFile = getCVData();
 
 const knownKeys = {
   p: 80,
@@ -16,44 +18,47 @@ const knownKeys = {
 };
 
 class App extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
-    this.keysList = { };
+    this.keysList = {};
     this.pdf = null;
     this.inGeneration = false;
     this.appRef = React.createRef();
 
     this.state = {
-      pages: [{
-        ref: React.createRef(),
-        dataToLoad: cvDataFile,
-        lastType: ''
-      }],
+      pages: [
+        {
+          ref: React.createRef(),
+          dataToLoad: cvDataFile,
+          lastType: ''
+        }
+      ],
       isLoaderActive: true
     };
   }
 
   resetKeys = (keys) => {
-    keys.forEach(key => {
+    keys.forEach((key) => {
       this.keysList[knownKeys[key]] = false;
     });
-  }
+  };
 
   _onKeyHandle = async (e, isDown) => {
     this.keysList[e.keyCode] = knownKeys.escape === e.keyCode ? true : isDown;
 
     if (this.keysList[knownKeys.escape]) {
-      Object.keys(this.keysList).forEach(key => {
+      Object.keys(this.keysList).forEach((key) => {
         this.keysList[key] = false;
       });
       return;
     }
 
-    if (this.keysList[knownKeys.p] && (this.keysList[knownKeys.command] || this.keysList[knownKeys.control])) {
+    if (
+      this.keysList[knownKeys.p] &&
+      (this.keysList[knownKeys.command] || this.keysList[knownKeys.control])
+    ) {
       e.preventDefault();
-      this.resetKeys([
-        'p', 'command'
-      ]);
+      this.resetKeys(['p', 'command']);
 
       if (this.inGeneration) {
         return;
@@ -79,7 +84,7 @@ class App extends React.Component {
             useCORS: true,
             allowTaint: false,
             logging: false
-          }).then(canvas => {
+          }).then((canvas) => {
             const imgData = canvas.toDataURL('image/jpeg', 1);
 
             if (i > 0) {
@@ -101,22 +106,22 @@ class App extends React.Component {
       this.setLoader(false);
       this.inGeneration = false;
     }
-  }
+  };
 
   setLoader = (value) => {
     this.setState({
       isLoaderActive: value
     });
-  }
+  };
 
-  componentDidMount () {
+  componentDidMount() {
     document.addEventListener('keydown', (e) => this._onKeyHandle(e, true));
     document.addEventListener('keyup', (e) => this._onKeyHandle(e, false));
 
     this.setLoader(false);
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     document.removeEventListener('keydown', (e) => this._onKeyHandle(e, true));
     document.removeEventListener('keyup', (e) => this._onKeyHandle(e, false));
   }
@@ -137,18 +142,21 @@ class App extends React.Component {
     });
   };
 
-  render () {
+  render() {
     return (
       <div className="app" ref={this.appRef}>
         {this.state.pages.map((data, i) => {
-          return <Page
-            key={i}
-            id={i}
-            componentRef={this.state.pages[i].ref}
-            onNextPageSetup={this.onNextPageSetup}
-            hasHeader={i === 0}
-            dataToLoad={data.dataToLoad}
-            lastType={data.lastType} />;
+          return (
+            <Page
+              key={i}
+              id={i}
+              componentRef={this.state.pages[i].ref}
+              onNextPageSetup={this.onNextPageSetup}
+              hasHeader={i === 0}
+              dataToLoad={data.dataToLoad}
+              lastType={data.lastType}
+            />
+          );
         })}
         <LoadingComp isActive={this.state.isLoaderActive} />
       </div>

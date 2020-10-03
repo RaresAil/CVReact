@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import './style/page.css';
 
 import Header from '../header';
 import PageBodyLine from '../pageBodyLine';
 
 class Page extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
     const dataToLoad = props.dataToLoad;
     const body = dataToLoad.body;
@@ -16,7 +17,7 @@ class Page extends React.Component {
     };
   }
 
-  componentDidMount () {
+  componentDidMount() {
     if (!this.state.bodyLoad || this.state.bodyLoad.length <= 0) {
       return;
     }
@@ -32,7 +33,8 @@ class Page extends React.Component {
       bottom: parseInt(paretnStyle.getPropertyValue('padding-bottom'))
     };
 
-    const heightForContent = parent.clientHeight - (paddings.top + paddings.bottom);
+    const heightForContent =
+      parent.clientHeight - (paddings.top + paddings.bottom);
     const childs = parent.childNodes;
 
     const dataForNextPage = [];
@@ -40,7 +42,7 @@ class Page extends React.Component {
     let usedHeight = 0;
     let goForNextPage = false;
 
-    childs.forEach(child => {
+    childs.forEach((child) => {
       if (child.nodeType === Node.TEXT_NODE) {
         return;
       }
@@ -89,12 +91,23 @@ class Page extends React.Component {
     });
   }
 
-  render () {
+  render() {
     return (
       <div className="page" ref={this.props.componentRef}>
-        <Header headerData={this.props.hasHeader ? this.props.dataToLoad : null}/>
+        <Header
+          headerData={this.props.hasHeader ? this.props.dataToLoad : null}
+        />
         {this.state.bodyLoad.map((line, i) => {
-          return <PageBodyLine updateLastType={this.updateLastType} initType={this.props.lastType} hasHeader={this.props.hasHeader} id={i} key={i} line={line} />;
+          return (
+            <PageBodyLine
+              updateLastType={this.updateLastType}
+              initType={this.props.lastType}
+              hasHeader={this.props.hasHeader}
+              id={i}
+              key={i}
+              line={line}
+            />
+          );
         })}
       </div>
     );

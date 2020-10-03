@@ -1,10 +1,14 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 
 class LoadingComp extends Component {
-  render () {
+  render() {
     return (
-      <div className={`loadingPage ${this.props.isActive || false ? 'active' : 'false'}`}>
+      <div
+        className={`loadingPage ${
+          this.props.isActive || false ? 'active' : 'false'
+        }`}
+      >
         <div className="spinner"></div>
       </div>
     );

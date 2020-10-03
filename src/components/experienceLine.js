@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 
 class ExperienceLine extends Component {
-  render () {
+  render() {
     const data = this.props.data;
 
     return (
@@ -19,10 +19,16 @@ class ExperienceLine extends Component {
           </div>
           <ul className="ex-info">
             {data.info.map((infoLine, i) => {
-              const link = infoLine.substring(
-                infoLine.lastIndexOf('<a>') + 1,
-                infoLine.lastIndexOf('</a>')
-              ).replace('a>', '');
+              const link =
+                infoLine.lastIndexOf('<a>') >= 0
+                  ? infoLine
+                      .substring(
+                        infoLine.lastIndexOf('<a>') + 1,
+                        infoLine.lastIndexOf('</a>')
+                      )
+                      .replace('a>', '')
+                      .trim()
+                  : '';
 
               let line = infoLine;
               let n = '';
@@ -32,10 +38,20 @@ class ExperienceLine extends Component {
                 line = line.split(`<a>${link}</a>`);
                 n = line[1];
                 line = line[0];
-                linkA = <a href={link} target="_blank" rel="noopener noreferrer">{link}</a>;
+                linkA = (
+                  <a href={link} target="_blank" rel="noopener noreferrer">
+                    {link}
+                  </a>
+                );
               }
 
-              return <li key={i}>{line}{linkA}{n}</li>;
+              return (
+                <li key={i}>
+                  {line}
+                  {linkA}
+                  {n}
+                </li>
+              );
             })}
           </ul>
         </div>

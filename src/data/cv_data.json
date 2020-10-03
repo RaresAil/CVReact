@@ -1,20 +1,19 @@
 {
-  "name": "NICOLAE - RARES AILINCAI",
-  "surname": "",
+  "name": "%PRIVATE%",
   "specialization": "FRONT-END & BACK-END DEVELOPER",
   "contact": {
-    "phone": "phone",
-    "email": "email",
-    "website": "www.raresdesigns.com",
-    "location": "location"
+    "phone": "%PRIVATE%",
+    "email": "%PRIVATE%",
+    "website": "%PRIVATE%",
+    "location": "%PRIVATE%"
   },
   "body": [
     {
       "title": "ABOUT ME",
       "type": "about",
       "data": {
-        "sex": "male",
-        "birth": "age",
+        "sex": "%PRIVATE%",
+        "birth": "%PRIVATE%",
         "nat": "Romanian"
       }
     },
@@ -106,8 +105,20 @@
       "title": "EXPERIENCE",
       "type": "experience",
       "data": {
-        "start_year": "2018",
-        "end_year": "2019",
+        "start_year": "2020",
+        "end_year": "Present",
+        "title": "Full Stack Developer",
+        "institute": "Thinslices",
+        "location": "Iasi, Romania",
+        "info": ["MongoDB", "NodeJS / React / Express", "TypeScript"]
+      }
+    },
+    {
+      "title": "EXPERIENCE",
+      "type": "experience",
+      "data": {
+        "start_year": "2017",
+        "end_year": "2020",
         "title": "Full Stack Developer",
         "institute": "Freelancer",
         "location": "Roman, Romania",
@@ -134,6 +145,18 @@
           "Using the Swift Programing Language",
           "Building iOS Applications"
         ]
+      }
+    },
+    {
+      "title": "EDUCATION",
+      "type": "education",
+      "data": {
+        "start_year": "2020",
+        "end_year": "2020",
+        "title": "M001: MongoDB Basics",
+        "institute": "MongoDB University",
+        "location": "Remote",
+        "info": ["%PRIVATE%", "%PRIVATE%"]
       }
     },
     {
