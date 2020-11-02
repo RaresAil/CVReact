@@ -163,6 +163,18 @@
       "title": "EDUCATION",
       "type": "education",
       "data": {
+        "start_year": "2020",
+        "end_year": "2020",
+        "title": "M201: MongoDB Performance",
+        "institute": "MongoDB University",
+        "location": "Remote",
+        "info": ["%PRIVATE%", "%PRIVATE%"]
+      }
+    },
+    {
+      "title": "EDUCATION",
+      "type": "education",
+      "data": {
         "start_year": "2018",
         "end_year": "2019",
         "title": "CLA: Programming Essentials in C",
