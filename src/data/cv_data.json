@@ -1,12 +1,7 @@
 {
   "name": "%PRIVATE%",
   "specialization": "FRONT-END & BACK-END DEVELOPER",
-  "contact": {
-    "phone": "%PRIVATE%",
-    "email": "%PRIVATE%",
-    "website": "%PRIVATE%",
-    "location": "%PRIVATE%"
-  },
+  "contact": "%PRIVATE%",
   "body": [
     {
       "title": "ABOUT ME",
@@ -27,7 +22,7 @@
         "institute": "NPM",
         "location": "Roman, Romania",
         "info": [
-          "I made a NodeJS Library in TypeScript for ExpressJS, a Dependency Injector and a CLI. The library is made to can build ExpressJS applications with TypeScript using the ADR Pattern (Action-Domain-Responder) and i added Decorators to Inject actions (Routes) automatically. -> <a>https://www.npmjs.com/package/express-adr-dependency-injection-typescript</a>"
+          "I made a NodeJS Library in TypeScript for ExpressJS, a Dependency Injector and a CLI. The library is made to can build ExpressJS applications with TypeScript using the ADR Pattern (Action-Domain-Responder) and i added Decorators to Inject actions (Routes) automatically. -> <a>https://www.npmjs.com/package/adr-express-ts</a>"
         ]
       }
     },
@@ -42,6 +37,20 @@
         "location": "Roman, Romania",
         "info": [
           "I made a Web Application using React and Redux using the MVC Pattern -> <a>https://github.com/RaresAil/redux-typescript-demo</a>"
+        ]
+      }
+    },
+    {
+      "title": "PROJECTS",
+      "type": "projects",
+      "data": {
+        "start_year": "2020",
+        "end_year": "2020",
+        "title": "NodeJS React with Redux | Front-End",
+        "institute": "GitHub",
+        "location": "Roman, Romania",
+        "info": [
+          "I made a React MVVM TypeScript Template -> <a>https://www.npmjs.com/package/cra-template-typescript-mvvm</a>"
         ]
       }
     },
@@ -110,7 +119,13 @@
         "title": "Full Stack Developer",
         "institute": "Thinslices",
         "location": "Iasi, Romania",
-        "info": ["MongoDB", "NodeJS / React / Express", "TypeScript"]
+        "info": [
+          "MongoDB",
+          "NodeJS / React / Express",
+          "TypeScript",
+          "Kubernetes",
+          "Docker"
+        ]
       }
     },
     {
@@ -165,7 +180,43 @@
       "data": {
         "start_year": "2020",
         "end_year": "2020",
+        "title": "M121: The MongoDB Aggregation Framework",
+        "institute": "MongoDB University",
+        "location": "Remote",
+        "info": ["%PRIVATE%", "%PRIVATE%"]
+      }
+    },
+    {
+      "title": "EDUCATION",
+      "type": "education",
+      "data": {
+        "start_year": "2020",
+        "end_year": "2020",
         "title": "M201: MongoDB Performance",
+        "institute": "MongoDB University",
+        "location": "Remote",
+        "info": ["%PRIVATE%", "%PRIVATE%"]
+      }
+    },
+    {
+      "title": "EDUCATION",
+      "type": "education",
+      "data": {
+        "start_year": "2020",
+        "end_year": "2020",
+        "title": "M220JS: MongoDB for Javascript Developers",
+        "institute": "MongoDB University",
+        "location": "Remote",
+        "info": ["%PRIVATE%", "%PRIVATE%"]
+      }
+    },
+    {
+      "title": "EDUCATION",
+      "type": "education",
+      "data": {
+        "start_year": "2020",
+        "end_year": "2020",
+        "title": "M320: Data Modeling",
         "institute": "MongoDB University",
         "location": "Remote",
         "info": ["%PRIVATE%", "%PRIVATE%"]
