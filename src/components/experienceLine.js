@@ -35,7 +35,7 @@ class ExperienceLine extends Component {
               let linkA = <React.Fragment></React.Fragment>;
 
               if (link !== '') {
-                line = line.split(`<a>${link}</a>`);
+                line = line.split(['<a>', link, '</a>'].join(''));
                 n = line[1];
                 line = line[0];
                 linkA = (

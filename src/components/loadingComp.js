@@ -3,12 +3,9 @@ import React, { Component } from 'react';
 
 class LoadingComp extends Component {
   render() {
+    const isActive = this.props?.isActive || false ? 'active' : 'false';
     return (
-      <div
-        className={`loadingPage ${
-          this.props.isActive || false ? 'active' : 'false'
-        }`}
-      >
+      <div className={['loadingPage', isActive].join(' ')}>
         <div className="spinner"></div>
       </div>
     );

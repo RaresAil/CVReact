@@ -20,6 +20,7 @@
   "plugins": ["react"],
   "rules": {
     "semi": ["error", "always"],
-    "indent": "off"
+    "indent": "off",
+    "space-before-function-paren": "off"
   }
 }

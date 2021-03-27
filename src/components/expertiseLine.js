@@ -10,7 +10,7 @@ class ExpertiseLine extends Component {
             <div key={i} className="item">
               <div>{line.title}</div>
               <div className="slider">
-                <span style={{ width: `${line.percent}%` }}></span>
+                <span style={{ width: [line.percent, '%'].join('') }}></span>
               </div>
             </div>
           );
